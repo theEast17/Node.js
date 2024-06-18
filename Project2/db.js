@@ -1,14 +1,17 @@
 import mongoose from "mongoose";
+import  dotenv  from 'dotenv'
+dotenv.config()
 
-const mongoUrl='mongodb://localhost:27017/myhotel'
+// const mongoUrl='process.env.DATABASE_LOCAL_URL'
+// eslint-disable-next-line no-undef
+const mongoUrl=process.env.DATABASE_URL
 
 const connectDb = async () => {
   try {
-    const conn=await mongoose.connect(mongoUrl);
+    await mongoose.connect(mongoUrl);
     console.log(`MongoDb Connected`)
   } catch (err) {
-    console.log("failed to connect");
-    process.exit(1);
+    console.log("failed to connect",err);
   }
 };
 

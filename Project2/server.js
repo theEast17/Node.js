@@ -1,13 +1,15 @@
 import express from 'express'
 import connectDb from './db.js'
 import bodyParser from 'body-parser'
-// import { CreateMenu, CreateUser } from './controllers/Create.js'
-// import { GetMenus, GetUsers, GetWorkUser } from './controllers/Read.js'
 import { PersonRouter } from './Routers/PersonRouter.js'
 import { MenuRouter } from './Routers/MenuRouter.js'
+import  dotenv  from 'dotenv'
+dotenv.config()
 
-const port = 5000
-const app = express()
+
+const app  = express()
+// eslint-disable-next-line no-undef
+const port = process.env.PORT || 3000
 
 app.use(bodyParser.json())
 connectDb()
