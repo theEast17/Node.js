@@ -7,8 +7,8 @@ import { DeleteUser } from '../controllers/Delete.js'
 
 export const PersonRouter=express.Router()
 
-PersonRouter.post('/user',CreateUser)
-PersonRouter.get('/user',GetUsers)
-PersonRouter.get('/user/:work',GetWorkUser)
-PersonRouter.put('/user/:id',UpdateUser)
-PersonRouter.delete('/user/:id',DeleteUser)
+PersonRouter.post('/',CreateUser)
+PersonRouter.get('/',GetUsers)
+PersonRouter.get('/:work',GetWorkUser)
+PersonRouter.put('/:id',UpdateUser)
+PersonRouter.delete('/:id',DeleteUser)

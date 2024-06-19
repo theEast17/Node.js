@@ -5,13 +5,14 @@ export const CreateUser = async (req, res) => {
     const data = req.body
     try {
         const newUser = await PersonModel.create({
-            name: data.name,
             age: data.age,
             work: data.work,
             mobile: data.mobile,
             email: data.email,
             address: data.address,
-            salary: data.salary
+            salary: data.salary,
+            username:data.username,
+            password:data.password
         });
         res.status(201).json({ id: newUser._id });
     } catch (error) {

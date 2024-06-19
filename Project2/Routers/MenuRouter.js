@@ -6,8 +6,8 @@ import { DeleteMenu } from '../controllers/Delete.js'
 
 export const MenuRouter=express.Router()
 
-MenuRouter.post('/menu',CreateMenu)
-MenuRouter.get('/menu',GetMenus)
-MenuRouter.get('/menu/:taste',GetMenuReciepeByName)
-MenuRouter.put('/menu/:id',UpdateMenu)
-MenuRouter.delete('/menu/:id',DeleteMenu)
+MenuRouter.post('/',CreateMenu)
+MenuRouter.get('/',GetMenus)
+MenuRouter.get('/:taste',GetMenuReciepeByName)
+MenuRouter.put('/:id',UpdateMenu)
+MenuRouter.delete('/:id',DeleteMenu)

@@ -2,9 +2,10 @@ import mongoose from "mongoose";
 import  dotenv  from 'dotenv'
 dotenv.config()
 
-// const mongoUrl='process.env.DATABASE_LOCAL_URL'
 // eslint-disable-next-line no-undef
-const mongoUrl=process.env.DATABASE_URL
+const mongoUrl=process.env.DATABASE_LOCAL_URL
+// eslint-disable-next-line no-undef
+// const mongoUrl=process.env.DATABASE_URL
 
 const connectDb = async () => {
   try {
