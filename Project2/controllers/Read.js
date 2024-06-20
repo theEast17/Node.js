@@ -10,13 +10,24 @@ export const GetUsers = async (req, res) => {
     }
 }
 
+export const GetUserProfile=async(req,res)=>{
+    try {
+        const data=req.userPayload
+        const userId=data.id
+        const user=await PersonModel.findById(userId)
+        res.status(200).json(user)
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+}
+
 
 export const GetWorkUser = async (req, res) => {
     try {
         const params = req.params
         if (params.work === 'waiter' || params.work === 'chef' || params.work === 'manager') {
             const response = await PersonModel.find({ work: params.work })
-            res.json(response)
+            res.status(200).json(response)
         } else {
             res.status(404).json({ message: 'Invalid Worktype' })
         }

@@ -22,13 +22,14 @@ app.use(middlewareFunction)
 
 app.use(passportAuth.initialize())
 
-const passportAuthenticate = passportAuth.authenticate('local', { session: false })
+// const passportAuthenticate = passportAuth.authenticate('local', { session: false })
 
 app.get('/', async (req, res) => {
     res.send('welcome to the hotel')
 })
 
-app.use('/user',passportAuthenticate, PersonRouter)
+// app.use('/user',passportAuthenticate, PersonRouter)   //it is session authentication
+app.use('/user', PersonRouter)
 app.use('/menu', MenuRouter)
 
 
